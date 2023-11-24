@@ -36,8 +36,20 @@ async function tiposDeCarro ()
      imagenCorolla.src="images/toyota-corolla-2018.png";
      let parrafoCorolla = document.getElementById("parrafoCorolla");
      parrafoCorolla.innerHTML = "Vehiculo familiar, motor 1.8 , aire acondicionado dual, vidrios automaticos";
+     let imagenTahoe = document.getElementById("imagenTahoe");
+     imagenTahoe.src = "images/tahoe.png";
+     let parrafoTahoe = document.getElementById("parrafoTahoe");
+     parrafoTahoe.innerHTML = "Cuenta con una capacidad sólida de remolque de hasta 8,600 libras , junto a un motor Chevrolet Tahoe V8 de 355 caballos de fuerza estándar y un V8 opcional de 420 hp";
+     let imagenCruze = document.getElementById("imagenCruze");
+     imagenCruze.src = "images/chevrolet cruze.png";
+     let parrafoCruze = document.getElementById("parrafoCruze");
+     parrafoCruze.innerHTML = "Toda la gama viene con seis airbags (frontales para el conductor y acompañante, laterales y de cortina), frenos a disco en las 4 ruedas, ABS con ESP, sistema electrónico de control de tracción, encendido automático de luces, anclajes ISOFIX, apoyacabezas, cinturones de seguridad de 3 puntos en todas las plazas y cámara de visión trasera.";
+     let imagenBlazer =document.getElementById("imagenBlazer");
+     imagenBlazer.src = "images/blazer.png";
+     let parrafoBlazer = document.getElementById("parrafoBlazer");
+     parrafoBlazer.innerHTML = "La Chevrolet S-10 es una serie de camionetas tipo pickup, fabricadas por la firma estadounidense General Motors, para su marca Chevrolet y la división GMC (la versión de GMC era conocida como S-15 y más tarde fue renombrada como GMC Sonoma";
 
-    }
+     }
 }
 tiposDeCarro();
 
