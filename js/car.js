@@ -42,7 +42,7 @@ async function tiposDeCarro ()
      let combustible =descripcionTipoCombustible(json[0]["fuel_type"]);
      let cilindrada = descripcionCilindros(json[0]["cylinders"]);
      let engranaje =descripcionTransmission(json[0]["transmission"]);
-     let contenidoDescripcion = `Caracteristicas: ${fabricantes} ${combustible} ${cilindrada} ${engranaje}`;
+     let contenidoDescripcion = `Este Carro es ${fabricantes} ${combustible} ${cilindrada} ${engranaje}`;
      let descripcionCaracteristicasCarro = document.getElementById(`descripcionCaracteristicasCarro${i}`);
      descripcionCaracteristicasCarro.innerHTML = contenidoDescripcion;
      }
@@ -57,16 +57,30 @@ function descripcionEmpresas(make)
 
 
 function descripcionTipoCombustible(fuel_type){
+    let combustible = "";
+    if(fuel_type == "gas"){
+        combustible = "Nafta";
+    }else if(fuel_type == "diesel"){
+        combustible = "diesel";
+    }else{
+        combustible ="Electricidad";
+    }
     return `utiliza ${fuel_type},`;
 }
 
 function descripcionCilindros(cylinders){
-    return `tiene motores de ${cylinders}`;
+    return `tiene un motor de ${cylinders} cilindros`;
 
 }
 
 function descripcionTransmission(transmission){
-    return `con dos tipo de transmision: ${transmission}`;
+    let cambios = "";
+    if ( transmission == "a"){
+        cambios = "Automatica";
+    }else {
+        cambios = "Manual";
+    }
+    return `tiene una transmision: ${cambios}`;
 }
 
 
