@@ -42,7 +42,7 @@ async function tiposDeCarro ()
      let combustible =descripcionTipoCombustible(json[0]["fuel_type"]);
      let cilindrada = descripcionCilindros(json[0]["cylinders"]);
      let engranaje =descripcionTransmission(json[0]["transmission"]);
-     let contenidoDescripcion = `Caracteristicas ${fabricantes} ${combustible} ${cilindrada} ${engranaje}`;
+     let contenidoDescripcion = `Caracteristicas: ${fabricantes} ${combustible} ${cilindrada} ${engranaje}`;
      let descripcionCaracteristicasCarro = document.getElementById(`descripcionCaracteristicasCarro${i}`);
      descripcionCaracteristicasCarro.innerHTML = contenidoDescripcion;
      }
@@ -51,22 +51,22 @@ tiposDeCarro();
 
 function descripcionEmpresas(make)
 {
-    return `Es fabricado por ${make}`;
+    return `es fabricado por ${make},`;
     
 }
 
 
 function descripcionTipoCombustible(fuel_type){
-    return `puede utilizar ${fuel_type}`;
+    return `utiliza ${fuel_type},`;
 }
 
 function descripcionCilindros(cylinders){
-    return `Posee motores de ${cylinders}`;
+    return `tiene motores de ${cylinders}`;
 
 }
 
 function descripcionTransmission(transmission){
-    return `tiene dos tipod e transmision ${transmission}`;
+    return `con dos tipo de transmision: ${transmission}`;
 }
 
 
