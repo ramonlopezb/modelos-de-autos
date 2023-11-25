@@ -42,7 +42,9 @@ async function tiposDeCarro ()
      let combustible =descripcionTipoCombustible(json[0]["fuel_type"]);
      let cilindrada = descripcionCilindros(json[0]["cylinders"]);
      let engranaje =descripcionTransmission(json[0]["transmission"]);
-     let contenidoDescripcion = `Este Carro es ${fabricantes} ${combustible} ${cilindrada} ${engranaje}`;
+     let ciudad = rendimientoCombustibleCiudad(json[0]["city_mpg"]);
+     let autopista = rendimientoCombustibleAutopista(json[0]["higway_mpg"]);
+     let contenidoDescripcion = `Este modelo  ${fabricantes} ${combustible} ${cilindrada} ${engranaje} ${ciudad} ${autopista}`;
      let descripcionCaracteristicasCarro = document.getElementById(`descripcionCaracteristicasCarro${i}`);
      descripcionCaracteristicasCarro.innerHTML = contenidoDescripcion;
      }
@@ -51,7 +53,7 @@ tiposDeCarro();
 
 function descripcionEmpresas(make)
 {
-    return `es fabricado por ${make},`;
+    return `es producido por ${make},`;
     
 }
 
@@ -69,18 +71,38 @@ function descripcionTipoCombustible(fuel_type){
 }
 
 function descripcionCilindros(cylinders){
-    return `tiene un motor de ${cylinders} cilindros`;
+    return ` un motor de ${cylinders} cilindros`;
 
 }
 
 function descripcionTransmission(transmission){
     let cambios = "";
     if ( transmission == "a"){
-        cambios = "Automatica";
+        cambios = "automatica,";
     }else {
         cambios = "Manual";
     }
-    return `tiene una transmision: ${cambios}`;
+    return `con transmision ${cambios}`;
+}
+
+function rendimientoCombustibleCiudad(city_mpg){
+    let rendimiento = "";
+    if(city_mpg < 30){
+        rendimiento ="el rendimiento de combustible en la ciudad es Optimo";
+    }else{
+       rendimiento =" el rendimiento de combustible en la ciudad moderado";
+    }
+    return ` ${rendimiento}`;
+}
+
+function rendimientoCombustibleAutopista(higway_mpg){
+    let rendimiento2 = "";
+    if(higway_mpg < 28){
+        rendimiento2 = "Rendimiento de combustible en la Ruta es Optimo";
+    }else{
+        " Rendimiento de combustible en la Ruta moderado";
+    }
+    return `${rendimiento2}`
 }
 
 
